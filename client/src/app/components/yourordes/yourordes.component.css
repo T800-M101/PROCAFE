@@ -1,0 +1,25 @@
+.container {
+    margin-top: 150px;
+}
+
+.memo {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.card-body {
+    border-bottom-color: transparent;
+}
+
+.list-group-item {
+    border-top-color: transparent;
+}
+
+.card {
+    margin-bottom: 15px;
+    /* border-top: #d60047 1px solid; */
+}
+
+.col-md-12 {
+    margin-bottom: 100px;
+}

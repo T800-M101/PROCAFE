@@ -1,0 +1,19 @@
+<div class="container animated fadeIn">
+    <div class="card-columns">
+        <div class="card" *ngFor="let product of products">
+            <a [routerLink]="['/products/', product.id]"><img class="card-img-top" src="{{ product.image }}" alt="{{ product.name }}" /></a>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+
+                <p class="card-text">
+                    <span class="badge badge-pill badge-primary">{{ product.name }}
+          </span>
+                </p>
+                <p class="card-text">
+                    <span class="badge badge-pill badge-success price">{{ product.price | currency }}
+          </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

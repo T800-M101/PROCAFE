@@ -1,0 +1,85 @@
+<!-- <app-navigation></app-navigation> -->
+
+<div class="container animated fadeIn">
+    <div class="row  border-bottom" *ngFor="let product of productsInCart; let i = index">
+        <div class="col-md-2">
+            <img class="img-fluid m-4" src="{{ product.image }}" alt="{{ product.name }}" style="width: 100%; height:auto" [routerLink]="['/products/', product.id]" style="cursor: pointer;" />
+        </div>
+        <div class="col-md-5">
+            <p class="m-5">
+                <a href="#" [routerLink]="['/products/', product.id]">{{
+          product.description
+        }}</a>
+            </p>
+            <h3 class="mx-5">{{ product.price | currency }}</h3>
+
+            <div class="d-flex align-items-end">
+                <!-- <div>
+          <p class="px-5 mt-3">
+            <a href="#" class="btn btn-outline-primary">Buy Now</a>
+          </p>
+        </div> -->
+                <div>
+                    <p class="px-5 mt-3">
+                        <a href="#" (click)="removeProduct(i)" class="btn btn-outline-danger">Delete Product</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="mt-5 d-flex align-items-end">
+        <div class="p-3">
+          <div>
+            <a href="#" (click)="removeOneFromCart(i)" *ngIf="product.qty > 1"
+              ><span><i class="fa fa-minus"></i></span
+            ></a>
+                </div>
+            </div>
+            <div class="p-1 ">
+                <p>{{ product.qty }}</p>
+            </div>
+
+            <div class="p-3">
+                <a href="#" (click)="addOneToCart(i)"><span><i class="fa fa-plus"></i></span
+          ></a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 col-md-2">
+        <h2>{{ product.price * product.qty | currency }}</h2>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="float-right">
+                <h4 *ngIf="subTItems == 1; else moreThan1">
+                    Total({{ subTItems }} item)
+                </h4>
+                <ng-template #moreThan1>
+                    <h4>Total({{ subTItems }} items)</h4>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="float-rigth">
+                <h4>{{ getTotal() | currency }}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="float-right">
+                <div class="btn btn-primary btn-lg" *ngIf="getTotal() > 0" [routerLink]="['/shipping/', email]">
+                    Proceed to checkout
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

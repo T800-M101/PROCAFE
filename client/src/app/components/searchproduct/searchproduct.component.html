@@ -1,0 +1,55 @@
+<!-- <app-navigation></app-navigation> -->
+<div class="container" *ngIf="products.length == 0">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                <p>No results match:{{ term }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container p-4 animated fadeIn">
+
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mt-5 py-5" *ngFor="let product of products">
+
+            <div>
+                <a [routerLink]="['/products/', product.id]">
+                    <img class="img-responsive" src="{{ product.image }}" alt="{{ product.name }}" style="width: 100%; height:auto" />
+                </a>
+                <div>
+                    <h4>
+                        <a href="#" [routerLink]="['/products/', product.id]">{{ product.name }}
+            </a>
+                    </h4>
+                    <p>{{ product.description }}</p>
+                    <div>
+                        <div class="price">${{ product.price }}</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="card-columns">
+        <div class="card" *ngFor="let product of products">
+            <a [routerLink]="['/products/', product.id]"><img class="card-img-top" src="{{ product.image }}" alt="{{ product.name }}" /></a>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+
+                <p class="card-text">
+                    <span class="badge badge-pill badge-primary">{{ product.name }}
+          </span>
+                </p>
+                <p class="card-text">
+                    <span class="badge badge-pill badge-success price">{{ product.price | currency }}
+          </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

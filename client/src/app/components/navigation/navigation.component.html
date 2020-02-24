@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" *ngIf="nav">
+    <a class="navbar-brand" routerLink="/products"><img src="../assets/img/logo.svg" width="200" height="50" class="d-inline-block align-top " alt="" /></a>
+    <ul class="navbar-nav ml-auto ">
+        <!-- <li class="nav-item d-lg-none">
+            <a class="nav-link"><i class="fa fa-shopping-cart " aria-hidden="true"></i>
+          <span class="badge badge-pill badge-success m-1">{{ qty }}</span></a
+        >
+      </li> -->
+
+        <li class="nav-item d-lg-none" (click)="goTo()">
+            <button class="btn ">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <span class="badge badge-pill badge-success m-1">{{ qty }}</span>
+      </button>
+        </li>
+    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/products">Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Products
+        </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/products/category/', '1']">CAFE</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category/', '2']"
+            >CREMA</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '3']"
+            >TES</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '4']"
+            >JARABE</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '5']"
+            >SALSA</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '6']"
+            >POLVOS</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '7']"
+            >CHOCOLATE</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '8']"
+            >BASE NEUTRA</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '9']"
+            >DESECHABLES</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '10']"
+            >ACCESORIOS</a
+          >
+          <a class="dropdown-item" [routerLink]="['/products/category', '11']"
+            >EQUIPO</a
+          >
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          My Account
+        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- <a class="dropdown-item">MY ACCOUNT</a> -->
+                        <a class="dropdown-item" routerLink="/yourorders">MY ORDERS</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" (click)="authService.SignOut()">SIGN OUT</a>
+                    </div>
+            </li>
+            <!-- <li class="nav-item d-none d-lg-block">
+          <a [routerLink]="['/cart']" class="nav-link"
+            ><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span class="badge badge-pill badge-success m-1">{{ qty }}</span></a
+          >
+        </li> -->
+            <li class="nav-item d-none d-lg-block" (click)="goTo()">
+                <button class="btn ">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span class="badge badge-pill badge-success m-1">{{ qty }}</span>
+        </button>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search a product" (keyup.enter)="searchProduct(schProduct.value)" #schProduct aria-label="Search" />
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="buttom" (click)="searchProduct(schProduct.value)">
+        Search
+      </button>
+        </form>
+        </div>
+</nav>

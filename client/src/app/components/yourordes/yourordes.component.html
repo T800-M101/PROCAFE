@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>My Orders</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" *ngFor="let order of orderList">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col md-3">
+                            <p class="memo">ORDER PLACED</p>
+                            <p class="memo">{{ order.order_placed | date }}</p>
+                        </div>
+                        <div class="col md-3">
+                            <p class="memo">TOTAL</p>
+                            <p class="memo">{{ order.total | currency }}</p>
+                        </div>
+                        <div class="col md-3">
+                            <p class="memo">SHIP TO</p>
+                            <p class="memo">
+                                {{ order.customer_name + " " + order.lastname }}
+                            </p>
+                        </div>
+                        <div class="col md-3">
+                            <p class="memo">ORDER #</p>
+                            <p class="memo">{{ order.payment_ID }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <strong *ngIf="order.status == 'Delivered'">{{ order.status }} {{ order.status_date | date }}
+          </strong>
+                    <strong *ngIf="order.status == 'Pending'">{{ order.status }} </strong>
+                </div>
+                <!-- <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let details of productsDetails">
+                        <div class="col-md-2 float-left">
+                            <img [src]="details.image" alt="" style="width: 80px; height: 80px;" />
+                        </div>
+                        <div class="col-md-10 float-right">
+                            <p>{{ details.description }}</p>
+                            <p>{{ details.price | currency }}</p>
+                        </div>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</div>

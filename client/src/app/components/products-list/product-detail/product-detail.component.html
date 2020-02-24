@@ -1,0 +1,56 @@
+<div class="container p-4  animated fadeIn">
+    <div class="row" *ngFor="let item of product">
+        <div class="col-md-6 col-sm-6">
+            <img class="thumbnail img-responsive" src="{{ item.image }}" alt="{{ item.name }}" style="width: 100%; height:auto" />
+        </div>
+
+
+        <div class="col-md-6 col-sm-6 caption">
+            <span *ngIf="item.stock === 0" class="bg-danger p-1 text-white rounded-sm font-weight-bold">
+        Out of stock</span
+      >
+
+      <span
+        *ngIf="item.stock >= 1 && item.stock <= 5"
+        class="bg-warning p-1 text-white rounded-sm font-weight-bold"
+      >
+        Low stock</span
+      >
+
+      <span
+        *ngIf="item.stock > 5"
+        class="bg-success p-1 text-white rounded-sm font-weight-bold"
+      >
+        In stock</span
+      >
+      <h3 class="mt-4">{{ item.name }}</h3>
+
+      <!-- <a href="#">{{ item.description }}</a> -->
+      <p class="text-danger">{{ item.description }}</p>
+      <div class="price">${{ item.price }}</div>
+
+      <div>
+        <div class="row">
+          <button
+            class="btn btn-outline-success mr-2"
+            (click)="addToCart()"
+            *ngIf="item.stock > 1"
+          >
+            Add to Cart
+          </button>
+          <button class="btn btn-outline-primary" [routerLink]="['/products']">
+            Continue Shopping
+          </button>
+          <button
+            class="btn btn-outline-primary mx-2"
+            click=""
+            [routerLink]="['/cart']"
+            *ngIf="shoppingCart != ''"
+          >
+            Go to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

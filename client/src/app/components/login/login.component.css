@@ -1,0 +1,23 @@
+.logo,
+.login {
+  margin-top: 50px;
+}
+
+.btn-social {
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-facebook {
+  background: #3b5998;
+}
+
+.btn-google {
+  background: #dd4b39;
+}
