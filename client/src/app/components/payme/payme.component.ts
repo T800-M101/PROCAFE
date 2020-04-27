@@ -4,7 +4,7 @@ declare var paypal;
 @Component({
   selector: "app-payme",
   templateUrl: "./payme.component.html",
-  styleUrls: ["./payme.component.css"]
+  styleUrls: ["./payme.component.css"],
 })
 export class PaymeComponent implements OnInit {
   // @ViewChild("paypal", { static: true }) paypalElement: ElementRef;
@@ -12,7 +12,7 @@ export class PaymeComponent implements OnInit {
   // product = {
   //   price: 800.0,
   //   description: "Jarabe para cafe",
-  //   img: "assets/img/jarabe_Amareto.jpg"
+  //   img: "assets/img/jarabe_Amareto.jpg",
   // };
 
   // paifFor = false;

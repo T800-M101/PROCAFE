@@ -5,7 +5,7 @@ import {
   RouterStateSnapshot,
   UrlTree,
   Router,
-  Route
+  Route,
 } from "@angular/router";
 import { Observable } from "rxjs";
 
@@ -13,7 +13,7 @@ import { AuthService } from "src/app/shared/auth.service";
 import { AngularFireAuth } from "@angular/fire/auth";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private authService: AuthService) {}
